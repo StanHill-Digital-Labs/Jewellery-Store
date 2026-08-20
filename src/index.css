@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .font-serif-header {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  }
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-sans-body {
+    font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+  }
+  .font-label-caps {
+    font-family: 'Cinzel', 'Work Sans', sans-serif;
+    letter-spacing: 0.12em;
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+}
+
+.silver-shadow {
+  box-shadow: 0 4px 14px 0 rgba(180, 180, 180, 0.25);
+}
+
+.dark .silver-shadow,
+:where(.dark, .dark *) .silver-shadow {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.7);
+}
+
+.silver-glow {
+  box-shadow: 0 0 15px rgba(0, 166, 153, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c25a3f;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb,
+:where(.dark, .dark *) ::-webkit-scrollbar-thumb {
+  background: #00A699;
+}
+
